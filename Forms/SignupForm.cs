@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace employee_management_system.Forms
+namespace dispensary_management_system.Forms
 {
     public partial class SignupForm : Form
     {

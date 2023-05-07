@@ -1,4 +1,4 @@
-﻿namespace employee_management_system.Forms
+﻿namespace dispensary_management_system.Forms
 {
     partial class SignupForm
     {

@@ -63,9 +63,29 @@ namespace dispensary_management_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap article_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("article-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_line_dark {
             get {
                 object obj = ResourceManager.GetObject("close-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboard_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("dashboard-line-dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +106,46 @@ namespace dispensary_management_system.Properties {
         internal static System.Drawing.Bitmap eye_off_line_dark {
             get {
                 object obj = ResourceManager.GetObject("eye-off-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap group_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("group-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hospital_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("hospital-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("logout-line-dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stock_line_dark {
+            get {
+                object obj = ResourceManager.GetObject("stock-line-dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

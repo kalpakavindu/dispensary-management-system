@@ -1,4 +1,4 @@
-﻿namespace employee_management_system.Forms
+﻿namespace dispensary_management_system.Forms
 {
     partial class LoginForm
     {
@@ -156,6 +156,7 @@
             this.signin_btn.TabIndex = 7;
             this.signin_btn.Text = "Sign In";
             this.signin_btn.UseVisualStyleBackColor = false;
+            this.signin_btn.Click += new System.EventHandler(this.Signin_btn_Click);
             // 
             // label7
             // 
@@ -177,7 +178,7 @@
             this.reg_link.TabIndex = 9;
             this.reg_link.TabStop = true;
             this.reg_link.Text = "Register to your Account";
-            this.reg_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.reg_link_LinkClicked);
+            this.reg_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Reg_link_LinkClicked);
             // 
             // eye_btn
             // 
@@ -188,7 +189,7 @@
             this.eye_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.eye_btn.TabIndex = 11;
             this.eye_btn.TabStop = false;
-            this.eye_btn.Click += new System.EventHandler(this.eye_btn_Click);
+            this.eye_btn.Click += new System.EventHandler(this.Eye_btn_Click);
             // 
             // close_btn
             // 
@@ -200,7 +201,7 @@
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.close_btn.TabIndex = 10;
             this.close_btn.TabStop = false;
-            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
+            this.close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
             // LoginForm
             // 

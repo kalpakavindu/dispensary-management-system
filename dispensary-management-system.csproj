@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Forms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +102,24 @@
   <ItemGroup>
     <Folder Include="Dialogs\" />
     <Folder Include="Panels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-line-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\article-line-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-line-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard-line-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-line-dark.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye-line-dark.png" />
