@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Dialogs\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\StaffMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StaffMember.Designer.cs">
+      <DependentUpon>StaffMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,8 +83,35 @@
     <Compile Include="Forms\SignupForm.Designer.cs">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\Payments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Payments.Designer.cs">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\StaffMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\StaffMembers.Designer.cs">
+      <DependentUpon>StaffMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StaffMember.resx">
+      <DependentUpon>StaffMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Payments.resx">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\StaffMembers.resx">
+      <DependentUpon>StaffMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,10 +153,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialogs\" />
-    <Folder Include="Panels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\group-line-dark.png" />
   </ItemGroup>
