@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.transaction_filter_btn = new System.Windows.Forms.Button();
             this.transactions_label = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.transaction_filters = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.stock_filter_btn = new System.Windows.Forms.Button();
             this.stock_label = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.stock_filters = new System.Windows.Forms.ComboBox();
@@ -45,18 +45,29 @@
             this.staff_label = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.today_transaction_list = new System.Windows.Forms.DataGridView();
+            this.category_list = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.total_earnings = new System.Windows.Forms.TextBox();
+            this.products_sold = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.del_cato_btn = new System.Windows.Forms.Button();
+            this.upd_cato_btn = new System.Windows.Forms.Button();
+            this.add_cato_btn = new System.Windows.Forms.Button();
+            this.category_name_in = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.today_transaction_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.category_list)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +83,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Khaki;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.transaction_filter_btn);
             this.panel1.Controls.Add(this.transactions_label);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.transaction_filters);
@@ -82,18 +93,19 @@
             this.panel1.Size = new System.Drawing.Size(247, 184);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // transaction_filter_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Khaki;
-            this.button1.Location = new System.Drawing.Point(187, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Filter";
-            this.button1.UseVisualStyleBackColor = false;
+            this.transaction_filter_btn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.transaction_filter_btn.FlatAppearance.BorderSize = 0;
+            this.transaction_filter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transaction_filter_btn.ForeColor = System.Drawing.Color.Khaki;
+            this.transaction_filter_btn.Location = new System.Drawing.Point(187, 36);
+            this.transaction_filter_btn.Name = "transaction_filter_btn";
+            this.transaction_filter_btn.Size = new System.Drawing.Size(43, 23);
+            this.transaction_filter_btn.TabIndex = 4;
+            this.transaction_filter_btn.Text = "Filter";
+            this.transaction_filter_btn.UseVisualStyleBackColor = false;
+            this.transaction_filter_btn.Click += new System.EventHandler(this.transaction_filter_btn_Click);
             // 
             // transactions_label
             // 
@@ -128,6 +140,7 @@
             this.transaction_filters.ForeColor = System.Drawing.Color.SaddleBrown;
             this.transaction_filters.FormattingEnabled = true;
             this.transaction_filters.Items.AddRange(new object[] {
+            "All The Time",
             "Today",
             "Yesterday",
             "This Week",
@@ -151,7 +164,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGreen;
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.stock_filter_btn);
             this.panel2.Controls.Add(this.stock_label);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.stock_filters);
@@ -161,18 +174,19 @@
             this.panel2.Size = new System.Drawing.Size(247, 184);
             this.panel2.TabIndex = 4;
             // 
-            // button2
+            // stock_filter_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGreen;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.LightGreen;
-            this.button2.Location = new System.Drawing.Point(187, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(43, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Filter";
-            this.button2.UseVisualStyleBackColor = false;
+            this.stock_filter_btn.BackColor = System.Drawing.Color.DarkGreen;
+            this.stock_filter_btn.FlatAppearance.BorderSize = 0;
+            this.stock_filter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock_filter_btn.ForeColor = System.Drawing.Color.LightGreen;
+            this.stock_filter_btn.Location = new System.Drawing.Point(187, 37);
+            this.stock_filter_btn.Name = "stock_filter_btn";
+            this.stock_filter_btn.Size = new System.Drawing.Size(43, 23);
+            this.stock_filter_btn.TabIndex = 5;
+            this.stock_filter_btn.Text = "Filter";
+            this.stock_filter_btn.UseVisualStyleBackColor = false;
+            this.stock_filter_btn.Click += new System.EventHandler(this.stock_filter_btn_Click);
             // 
             // stock_label
             // 
@@ -207,10 +221,7 @@
             this.stock_filters.ForeColor = System.Drawing.Color.DarkGreen;
             this.stock_filters.FormattingEnabled = true;
             this.stock_filters.Items.AddRange(new object[] {
-            "Liquid Medicines",
-            "Medical Equipments",
-            "Tablets",
-            "Other Medicines"});
+            "All"});
             this.stock_filters.Location = new System.Drawing.Point(19, 36);
             this.stock_filters.Name = "stock_filters";
             this.stock_filters.Size = new System.Drawing.Size(161, 24);
@@ -274,62 +285,177 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Staff Members";
             // 
-            // today_transaction_list
+            // category_list
             // 
-            this.today_transaction_list.AllowUserToAddRows = false;
-            this.today_transaction_list.AllowUserToDeleteRows = false;
-            this.today_transaction_list.AllowUserToResizeRows = false;
-            this.today_transaction_list.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.today_transaction_list.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.today_transaction_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.today_transaction_list.Enabled = false;
-            this.today_transaction_list.Location = new System.Drawing.Point(18, 270);
-            this.today_transaction_list.MultiSelect = false;
-            this.today_transaction_list.Name = "today_transaction_list";
-            this.today_transaction_list.ReadOnly = true;
-            this.today_transaction_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.today_transaction_list.Size = new System.Drawing.Size(615, 338);
-            this.today_transaction_list.TabIndex = 6;
+            this.category_list.AllowUserToAddRows = false;
+            this.category_list.AllowUserToDeleteRows = false;
+            this.category_list.AllowUserToResizeRows = false;
+            this.category_list.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.category_list.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.category_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.category_list.Location = new System.Drawing.Point(19, 44);
+            this.category_list.MultiSelect = false;
+            this.category_list.Name = "category_list";
+            this.category_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.category_list.Size = new System.Drawing.Size(285, 285);
+            this.category_list.TabIndex = 6;
+            this.category_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.category_list_CellDoubleClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(652, 270);
+            this.label5.Location = new System.Drawing.Point(13, 65);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 16);
+            this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Today total earnings";
+            this.label5.Text = "Total earnings";
             // 
-            // textBox1
+            // total_earnings
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(655, 290);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(273, 24);
-            this.textBox1.TabIndex = 8;
+            this.total_earnings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.total_earnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_earnings.Location = new System.Drawing.Point(16, 85);
+            this.total_earnings.Name = "total_earnings";
+            this.total_earnings.ReadOnly = true;
+            this.total_earnings.Size = new System.Drawing.Size(259, 24);
+            this.total_earnings.TabIndex = 8;
             // 
-            // textBox2
+            // products_sold
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(655, 350);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(273, 24);
-            this.textBox2.TabIndex = 10;
+            this.products_sold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.products_sold.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.products_sold.Location = new System.Drawing.Point(16, 145);
+            this.products_sold.Name = "products_sold";
+            this.products_sold.ReadOnly = true;
+            this.products_sold.Size = new System.Drawing.Size(259, 24);
+            this.products_sold.TabIndex = 10;
             // 
-            // label6
+            // label100
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(652, 330);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Today products sold";
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label100.Location = new System.Drawing.Point(13, 125);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(89, 16);
+            this.label100.TabIndex = 9;
+            this.label100.Text = "Products sold";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Honeydew;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.del_cato_btn);
+            this.panel4.Controls.Add(this.upd_cato_btn);
+            this.panel4.Controls.Add(this.add_cato_btn);
+            this.panel4.Controls.Add(this.category_name_in);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.category_list);
+            this.panel4.Location = new System.Drawing.Point(18, 257);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(593, 351);
+            this.panel4.TabIndex = 11;
+            // 
+            // del_cato_btn
+            // 
+            this.del_cato_btn.BackColor = System.Drawing.Color.Salmon;
+            this.del_cato_btn.FlatAppearance.BorderSize = 0;
+            this.del_cato_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.del_cato_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.del_cato_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_cato_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.del_cato_btn.Location = new System.Drawing.Point(313, 295);
+            this.del_cato_btn.Name = "del_cato_btn";
+            this.del_cato_btn.Size = new System.Drawing.Size(263, 34);
+            this.del_cato_btn.TabIndex = 13;
+            this.del_cato_btn.Text = "Remove Category";
+            this.del_cato_btn.UseVisualStyleBackColor = false;
+            this.del_cato_btn.Click += new System.EventHandler(this.del_cato_btn_Click);
+            // 
+            // upd_cato_btn
+            // 
+            this.upd_cato_btn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.upd_cato_btn.FlatAppearance.BorderSize = 0;
+            this.upd_cato_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.upd_cato_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.upd_cato_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upd_cato_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upd_cato_btn.Location = new System.Drawing.Point(313, 255);
+            this.upd_cato_btn.Name = "upd_cato_btn";
+            this.upd_cato_btn.Size = new System.Drawing.Size(263, 34);
+            this.upd_cato_btn.TabIndex = 12;
+            this.upd_cato_btn.Text = "Update Category";
+            this.upd_cato_btn.UseVisualStyleBackColor = false;
+            this.upd_cato_btn.Click += new System.EventHandler(this.upd_cato_btn_Click);
+            // 
+            // add_cato_btn
+            // 
+            this.add_cato_btn.BackColor = System.Drawing.Color.LightGreen;
+            this.add_cato_btn.FlatAppearance.BorderSize = 0;
+            this.add_cato_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.add_cato_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.add_cato_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_cato_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_cato_btn.Location = new System.Drawing.Point(313, 215);
+            this.add_cato_btn.Name = "add_cato_btn";
+            this.add_cato_btn.Size = new System.Drawing.Size(263, 34);
+            this.add_cato_btn.TabIndex = 11;
+            this.add_cato_btn.Text = "Add Category";
+            this.add_cato_btn.UseVisualStyleBackColor = false;
+            this.add_cato_btn.Click += new System.EventHandler(this.add_cato_btn_Click);
+            // 
+            // category_name_in
+            // 
+            this.category_name_in.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.category_name_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category_name_in.Location = new System.Drawing.Point(313, 64);
+            this.category_name_in.Name = "category_name_in";
+            this.category_name_in.Size = new System.Drawing.Size(263, 24);
+            this.category_name_in.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(310, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 16);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Category Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(163, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Product Categories";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.total_earnings);
+            this.panel5.Controls.Add(this.products_sold);
+            this.panel5.Controls.Add(this.label100);
+            this.panel5.Location = new System.Drawing.Point(635, 257);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(293, 221);
+            this.panel5.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Today Summery";
             // 
             // AdminDashboard
             // 
@@ -337,11 +463,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(940, 620);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.today_transaction_list);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -358,7 +481,11 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.today_transaction_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.category_list)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,12 +508,21 @@
         private System.Windows.Forms.TextBox staff_label;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView today_transaction_list;
+        private System.Windows.Forms.DataGridView category_list;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox total_earnings;
+        private System.Windows.Forms.Button transaction_filter_btn;
+        private System.Windows.Forms.Button stock_filter_btn;
+        private System.Windows.Forms.TextBox products_sold;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button del_cato_btn;
+        private System.Windows.Forms.Button upd_cato_btn;
+        private System.Windows.Forms.Button add_cato_btn;
+        private System.Windows.Forms.TextBox category_name_in;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label9;
     }
 }

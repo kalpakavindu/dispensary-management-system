@@ -30,18 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.product_name_in = new System.Windows.Forms.TextBox();
+            this.description_in = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.category_in = new System.Windows.Forms.ComboBox();
+            this.price_in = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.currency_in = new System.Windows.Forms.ComboBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.upd_btn = new System.Windows.Forms.Button();
-            this.del_btn = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.stock_in = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -65,24 +64,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Product Name";
             // 
-            // textBox1
+            // product_name_in
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(17, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 24);
-            this.textBox1.TabIndex = 2;
+            this.product_name_in.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.product_name_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_name_in.Location = new System.Drawing.Point(17, 87);
+            this.product_name_in.Name = "product_name_in";
+            this.product_name_in.Size = new System.Drawing.Size(275, 24);
+            this.product_name_in.TabIndex = 2;
             // 
-            // textBox2
+            // description_in
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(17, 153);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 137);
-            this.textBox2.TabIndex = 4;
+            this.description_in.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.description_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description_in.Location = new System.Drawing.Point(17, 153);
+            this.description_in.Multiline = true;
+            this.description_in.Name = "description_in";
+            this.description_in.Size = new System.Drawing.Size(275, 137);
+            this.description_in.TabIndex = 4;
             // 
             // label3
             // 
@@ -104,22 +103,22 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Product Category";
             // 
-            // comboBox1
+            // category_in
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(340, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(275, 26);
-            this.comboBox1.TabIndex = 6;
+            this.category_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category_in.FormattingEnabled = true;
+            this.category_in.Location = new System.Drawing.Point(340, 87);
+            this.category_in.Name = "category_in";
+            this.category_in.Size = new System.Drawing.Size(275, 26);
+            this.category_in.TabIndex = 6;
             // 
-            // textBox3
+            // price_in
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(340, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 24);
-            this.textBox3.TabIndex = 8;
+            this.price_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_in.Location = new System.Drawing.Point(340, 153);
+            this.price_in.Name = "price_in";
+            this.price_in.Size = new System.Drawing.Size(193, 24);
+            this.price_in.TabIndex = 8;
             // 
             // label5
             // 
@@ -131,18 +130,18 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Product Price";
             // 
-            // comboBox2
+            // currency_in
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.currency_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currency_in.FormattingEnabled = true;
+            this.currency_in.Items.AddRange(new object[] {
             "LKR",
             "USD",
             "AUD"});
-            this.comboBox2.Location = new System.Drawing.Point(538, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(77, 26);
-            this.comboBox2.TabIndex = 9;
+            this.currency_in.Location = new System.Drawing.Point(538, 152);
+            this.currency_in.Name = "currency_in";
+            this.currency_in.Size = new System.Drawing.Size(77, 26);
+            this.currency_in.TabIndex = 9;
             // 
             // add_btn
             // 
@@ -158,6 +157,7 @@
             this.add_btn.TabIndex = 10;
             this.add_btn.Text = "Add Product";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // upd_btn
             // 
@@ -173,30 +173,16 @@
             this.upd_btn.TabIndex = 11;
             this.upd_btn.Text = "Update Product";
             this.upd_btn.UseVisualStyleBackColor = false;
+            this.upd_btn.Click += new System.EventHandler(this.upd_btn_Click);
             // 
-            // del_btn
+            // stock_in
             // 
-            this.del_btn.BackColor = System.Drawing.Color.Salmon;
-            this.del_btn.FlatAppearance.BorderSize = 0;
-            this.del_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.del_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.del_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.del_btn.Location = new System.Drawing.Point(340, 201);
-            this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(275, 37);
-            this.del_btn.TabIndex = 12;
-            this.del_btn.Text = "Delete Product";
-            this.del_btn.UseVisualStyleBackColor = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(503, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 24);
-            this.textBox4.TabIndex = 13;
+            this.stock_in.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stock_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock_in.Location = new System.Drawing.Point(503, 19);
+            this.stock_in.Name = "stock_in";
+            this.stock_in.Size = new System.Drawing.Size(112, 24);
+            this.stock_in.TabIndex = 13;
             // 
             // label6
             // 
@@ -215,18 +201,17 @@
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(632, 329);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.del_btn);
+            this.Controls.Add(this.stock_in);
             this.Controls.Add(this.upd_btn);
             this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.currency_in);
+            this.Controls.Add(this.price_in);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.category_in);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.description_in);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.product_name_in);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -241,18 +226,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox product_name_in;
+        private System.Windows.Forms.TextBox description_in;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox category_in;
+        private System.Windows.Forms.TextBox price_in;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox currency_in;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button upd_btn;
-        private System.Windows.Forms.Button del_btn;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox stock_in;
         private System.Windows.Forms.Label label6;
     }
 }

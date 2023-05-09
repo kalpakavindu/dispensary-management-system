@@ -6,13 +6,13 @@ using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace employee_management_system
+namespace dispensary_management_system
 {
     internal class Database
     {
-        private string _connectionString;
-        private SqlConnection _connection;
-        private SqlCommand _command;
+        private readonly string _connectionString;
+        private readonly SqlConnection _connection;
+        private readonly SqlCommand _command;
         private DataTable _dataTable;
         private SqlDataAdapter _dataAdapter;
 
@@ -20,8 +20,10 @@ namespace employee_management_system
         {
             _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\srv\SqlDatabaseFiles\DispensaryManagementSystem_DotNET_DB.mdf;Integrated Security=True;Connect Timeout=30";
             _connection = new SqlConnection(_connectionString);
-            _command = new SqlCommand();
-            _command.Connection = _connection;
+            _command = new SqlCommand
+            {
+                Connection = _connection
+            };
         }
 
         public DataTable GetData(string query)

@@ -41,14 +41,13 @@
             this.member_list.AllowUserToResizeRows = false;
             this.member_list.BackgroundColor = System.Drawing.SystemColors.Window;
             this.member_list.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.member_list.Enabled = false;
             this.member_list.Location = new System.Drawing.Point(12, 46);
             this.member_list.MultiSelect = false;
             this.member_list.Name = "member_list";
-            this.member_list.ReadOnly = true;
             this.member_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.member_list.Size = new System.Drawing.Size(916, 514);
             this.member_list.TabIndex = 2;
+            this.member_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.member_list_CellDoubleClick);
             // 
             // label1
             // 
@@ -74,6 +73,7 @@
             this.add_btn.TabIndex = 4;
             this.add_btn.Text = "Add New Member";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // StaffMembers
             // 

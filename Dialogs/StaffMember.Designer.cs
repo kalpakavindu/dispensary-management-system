@@ -182,6 +182,7 @@
             this.add_btn.TabIndex = 13;
             this.add_btn.Text = "Add New Member";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // del_btn
             // 
@@ -197,6 +198,7 @@
             this.del_btn.TabIndex = 14;
             this.del_btn.Text = "Remove Member";
             this.del_btn.UseVisualStyleBackColor = false;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // upd_btn
             // 
@@ -212,6 +214,7 @@
             this.upd_btn.TabIndex = 15;
             this.upd_btn.Text = "Update Member";
             this.upd_btn.UseVisualStyleBackColor = false;
+            this.upd_btn.Click += new System.EventHandler(this.upd_btn_Click);
             // 
             // StaffMember
             // 

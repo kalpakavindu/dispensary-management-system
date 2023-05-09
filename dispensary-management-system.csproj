@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Dialogs\CategoryDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CategoryDelete.Designer.cs">
+      <DependentUpon>CategoryDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\CategoryDelete.resx">
+      <DependentUpon>CategoryDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
