@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dispensary_management_system.Panels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace dispensary_management_system.Forms
         public AdminForm()
         {
             InitializeComponent();
+            AdminDashboard dashboard = new AdminDashboard();
+            dashboard.TopLevel = false;
+            main_panel.Controls.Add(dashboard);
+            dashboard.Show();
         }
 
         private void logout_btn_label_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace employee_management_system
 
         public Database()
         {
-            _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\srv\SqlDatabaseFiles\EmployeeManagementSystem_DotNET_DB.mdf;Integrated Security=True;Connect Timeout=30";
+            _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\srv\SqlDatabaseFiles\DispensaryManagementSystem_DotNET_DB.mdf;Integrated Security=True;Connect Timeout=30";
             _connection = new SqlConnection(_connectionString);
             _command = new SqlCommand();
             _command.Connection = _connection;
