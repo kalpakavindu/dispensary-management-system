@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.navigation_panel = new System.Windows.Forms.Panel();
+            this.treatments_panel = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.treatments_label = new System.Windows.Forms.Label();
             this.logout_btn_panel = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.logout_btn_label = new System.Windows.Forms.Label();
@@ -48,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.main_panel = new System.Windows.Forms.Panel();
             this.navigation_panel.SuspendLayout();
+            this.treatments_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.logout_btn_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.staff_btn_panel.SuspendLayout();
@@ -64,6 +69,7 @@
             // navigation_panel
             // 
             this.navigation_panel.BackColor = System.Drawing.Color.LightGreen;
+            this.navigation_panel.Controls.Add(this.treatments_panel);
             this.navigation_panel.Controls.Add(this.logout_btn_panel);
             this.navigation_panel.Controls.Add(this.staff_btn_panel);
             this.navigation_panel.Controls.Add(this.payments_btn_panel);
@@ -76,6 +82,38 @@
             this.navigation_panel.Name = "navigation_panel";
             this.navigation_panel.Size = new System.Drawing.Size(227, 620);
             this.navigation_panel.TabIndex = 0;
+            // 
+            // treatments_panel
+            // 
+            this.treatments_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.treatments_panel.BackColor = System.Drawing.Color.LightGreen;
+            this.treatments_panel.Controls.Add(this.pictureBox7);
+            this.treatments_panel.Controls.Add(this.treatments_label);
+            this.treatments_panel.Location = new System.Drawing.Point(0, 254);
+            this.treatments_panel.Name = "treatments_panel";
+            this.treatments_panel.Size = new System.Drawing.Size(227, 46);
+            this.treatments_panel.TabIndex = 6;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::dispensary_management_system.Properties.Resources.group_line_dark;
+            this.pictureBox7.Location = new System.Drawing.Point(19, 7);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
+            // 
+            // treatments_label
+            // 
+            this.treatments_label.AutoSize = true;
+            this.treatments_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatments_label.Location = new System.Drawing.Point(99, 14);
+            this.treatments_label.Name = "treatments_label";
+            this.treatments_label.Size = new System.Drawing.Size(114, 18);
+            this.treatments_label.TabIndex = 0;
+            this.treatments_label.Text = "Patient Records";
+            this.treatments_label.Click += new System.EventHandler(this.treatments_label_Click);
             // 
             // logout_btn_panel
             // 
@@ -115,7 +153,7 @@
             this.staff_btn_panel.BackColor = System.Drawing.Color.LightGreen;
             this.staff_btn_panel.Controls.Add(this.pictureBox5);
             this.staff_btn_panel.Controls.Add(this.staff_btn_label);
-            this.staff_btn_panel.Location = new System.Drawing.Point(0, 254);
+            this.staff_btn_panel.Location = new System.Drawing.Point(0, 306);
             this.staff_btn_panel.Name = "staff_btn_panel";
             this.staff_btn_panel.Size = new System.Drawing.Size(227, 46);
             this.staff_btn_panel.TabIndex = 5;
@@ -281,6 +319,9 @@
             this.Text = "Admin - Dispensary Management System";
             this.navigation_panel.ResumeLayout(false);
             this.navigation_panel.PerformLayout();
+            this.treatments_panel.ResumeLayout(false);
+            this.treatments_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.logout_btn_panel.ResumeLayout(false);
             this.logout_btn_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -322,5 +363,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label payments_btn_label;
         private System.Windows.Forms.Panel main_panel;
+        private System.Windows.Forms.Panel treatments_panel;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label treatments_label;
     }
 }

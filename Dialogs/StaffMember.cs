@@ -16,7 +16,7 @@ namespace dispensary_management_system.Dialogs
         private int editKey;
         private Database connection;
 
-        public StaffMember(int id,bool toUpd)
+        public StaffMember(int id,bool toUpd, bool showRemove = true)
         {
             InitializeComponent();
             connection = new Database();
@@ -38,6 +38,11 @@ namespace dispensary_management_system.Dialogs
                     add_btn.Visible = false;
                     upd_btn.Visible = false;
                     loadData(editKey);
+
+                    if (!showRemove)
+                    {
+                        del_btn.Visible = false;
+                    }
 
                     first_name_in.ReadOnly = true;
                     last_name_in.ReadOnly = true;

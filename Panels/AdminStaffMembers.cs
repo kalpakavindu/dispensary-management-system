@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace dispensary_management_system.Panels
 {
-    public partial class StaffMembers : Form
+    public partial class AdminStaffMembers : Form
     {
         private Database connection;
 
-        public StaffMembers()
+        public AdminStaffMembers()
         {
             InitializeComponent();
             connection = new Database();

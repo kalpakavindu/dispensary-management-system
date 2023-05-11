@@ -1,6 +1,6 @@
 ﻿namespace dispensary_management_system.Panels
 {
-    partial class StaffMembers
+    partial class AdminStaffMembers
     {
         /// <summary>
         /// Required designer variable.

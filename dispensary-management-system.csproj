@@ -71,11 +71,23 @@
     <Compile Include="Dialogs\StaffMember.Designer.cs">
       <DependentUpon>StaffMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CashierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForm.Designer.cs">
+      <DependentUpon>CashierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -89,29 +101,65 @@
     <Compile Include="Forms\SignupForm.Designer.cs">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AddPatientRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AddPatientRecord.Designer.cs">
+      <DependentUpon>AddPatientRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AddPaymentRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AddPaymentRecord.Designer.cs">
+      <DependentUpon>AddPaymentRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Panels\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panels\Payments.cs">
+    <Compile Include="Panels\ViewPatientRecords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panels\Payments.Designer.cs">
-      <DependentUpon>Payments.cs</DependentUpon>
+    <Compile Include="Panels\ViewPatientRecords.Designer.cs">
+      <DependentUpon>ViewPatientRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panels\Products.cs">
+    <Compile Include="Panels\AdminPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panels\Products.Designer.cs">
-      <DependentUpon>Products.cs</DependentUpon>
+    <Compile Include="Panels\AdminPayments.Designer.cs">
+      <DependentUpon>AdminPayments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panels\StaffMembers.cs">
+    <Compile Include="Panels\AdminProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panels\StaffMembers.Designer.cs">
-      <DependentUpon>StaffMembers.cs</DependentUpon>
+    <Compile Include="Panels\AdminProducts.Designer.cs">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AdminStaffMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AdminStaffMembers.Designer.cs">
+      <DependentUpon>AdminStaffMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\AdminPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\AdminPatients.Designer.cs">
+      <DependentUpon>AdminPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\ViewPaymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\ViewPaymentDetails.Designer.cs">
+      <DependentUpon>ViewPaymentDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,8 +175,14 @@
     <EmbeddedResource Include="Dialogs\StaffMember.resx">
       <DependentUpon>StaffMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierForm.resx">
+      <DependentUpon>CashierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -136,17 +190,35 @@
     <EmbeddedResource Include="Forms\SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AddPatientRecord.resx">
+      <DependentUpon>AddPatientRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AddPaymentRecord.resx">
+      <DependentUpon>AddPaymentRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panels\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panels\Payments.resx">
-      <DependentUpon>Payments.cs</DependentUpon>
+    <EmbeddedResource Include="Panels\ViewPatientRecords.resx">
+      <DependentUpon>ViewPatientRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panels\Products.resx">
-      <DependentUpon>Products.cs</DependentUpon>
+    <EmbeddedResource Include="Panels\AdminPayments.resx">
+      <DependentUpon>AdminPayments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panels\StaffMembers.resx">
-      <DependentUpon>StaffMembers.cs</DependentUpon>
+    <EmbeddedResource Include="Panels\AdminProducts.resx">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AdminStaffMembers.resx">
+      <DependentUpon>AdminStaffMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\AdminPatients.resx">
+      <DependentUpon>AdminPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\ViewPaymentDetails.resx">
+      <DependentUpon>ViewPaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

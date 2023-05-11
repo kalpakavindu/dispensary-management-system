@@ -34,6 +34,7 @@ namespace dispensary_management_system.Forms
         {
             dashboard_btn_panel.BackColor = Color.Honeydew;
             products_btn_panel.BackColor = Color.LightGreen;
+            treatments_panel.BackColor = Color.LightGreen;
             payments_btn_panel.BackColor = Color.LightGreen;
             staff_btn_panel.BackColor = Color.LightGreen;
 
@@ -49,11 +50,12 @@ namespace dispensary_management_system.Forms
         private void products_btn_label_Click(object sender, EventArgs e)
         {
             dashboard_btn_panel.BackColor = Color.LightGreen;
+            treatments_panel.BackColor = Color.LightGreen;
             products_btn_panel.BackColor = Color.Honeydew;
             payments_btn_panel.BackColor = Color.LightGreen;
             staff_btn_panel.BackColor = Color.LightGreen;
 
-            Products products = new Products
+            AdminProducts products = new AdminProducts
             {
                 TopLevel = false
             };
@@ -65,11 +67,12 @@ namespace dispensary_management_system.Forms
         private void payments_btn_label_Click(object sender, EventArgs e)
         {
             dashboard_btn_panel.BackColor = Color.LightGreen;
+            treatments_panel.BackColor = Color.LightGreen;
             products_btn_panel.BackColor = Color.LightGreen;
             payments_btn_panel.BackColor = Color.Honeydew;
             staff_btn_panel.BackColor = Color.LightGreen;
 
-            Payments payments = new Payments
+            AdminPayments payments = new AdminPayments
             {
                 TopLevel = false
             };
@@ -81,17 +84,35 @@ namespace dispensary_management_system.Forms
         private void staff_btn_label_Click(object sender, EventArgs e)
         {
             dashboard_btn_panel.BackColor = Color.LightGreen;
+            treatments_panel.BackColor = Color.LightGreen;
             products_btn_panel.BackColor = Color.LightGreen;
             payments_btn_panel.BackColor = Color.LightGreen;
             staff_btn_panel.BackColor = Color.Honeydew;
 
-            StaffMembers staff = new StaffMembers
+            AdminStaffMembers staff = new AdminStaffMembers
             {
                 TopLevel = false
             };
             main_panel.Controls.Clear();
             main_panel.Controls.Add(staff);
             staff.Show();
+        }
+
+        private void treatments_label_Click(object sender, EventArgs e)
+        {
+            dashboard_btn_panel.BackColor = Color.LightGreen;
+            treatments_panel.BackColor = Color.Honeydew;
+            products_btn_panel.BackColor = Color.LightGreen;
+            payments_btn_panel.BackColor = Color.LightGreen;
+            staff_btn_panel.BackColor = Color.LightGreen;
+
+            AdminPatients treatments = new AdminPatients
+            {
+                TopLevel = false
+            };
+            main_panel.Controls.Clear();
+            main_panel.Controls.Add(treatments);
+            treatments.Show();
         }
     }
 }

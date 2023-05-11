@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace dispensary_management_system.Panels
 {
-    public partial class Payments : Form
+    public partial class AdminPatients : Form
     {
-        public Payments()
+        public AdminPatients()
         {
             InitializeComponent();
         }
