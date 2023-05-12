@@ -35,11 +35,15 @@ namespace dispensary_management_system.Panels
         {
             try
             {
-                string query = "SELECT name FROM ProductTable";
+                string query = "SELECT * FROM ProductTable";
                 DataTable productNames = connection.GetData(query);
                 foreach (DataRow row in productNames.Rows)
                 {
-                    product_in.Items.Add((string)row["name"]);
+                    if ((int)row["count"] != 0)
+                    {
+                        string name = (string)row["name"];
+                        product_in.Items.Add($"{name}");
+                    }
                 }
             }
             catch(Exception ex)
@@ -53,18 +57,26 @@ namespace dispensary_management_system.Panels
 
         private void add_product_btn_Click(object sender, EventArgs e)
         {
-            if(product_in.Text != "" && qty_in.Text != "" || qty_in.Text != "0")
+            if(product_in.Text != "" && qty_in.Text != "" && qty_in.Text != "0")
             {
-                quotaTable.Rows.Add(product_in.Text, Convert.ToInt32(qty_in.Text));
-
                 string query = $"SELECT * FROM ProductTable WHERE name='{product_in.Text}'";
                 DataTable productData = connection.GetData(query);
-                price_sub_total += (int)productData.Rows[0]["price"] * Convert.ToInt32(qty_in.Text);
-                sub_total.Text = price_sub_total.ToString();
-                
-                product_in.Text = "";
-                qty_in.Text = "";
-                quota.DataSource = quotaTable;
+                int currentStock = (int)productData.Rows[0]["count"];
+                if (currentStock < Convert.ToInt32(qty_in.Text))
+                {
+
+                    MessageBox.Show($"Quoatninty is too high to this product.\n\nCurrently in stock: {currentStock}", "Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    quotaTable.Rows.Add(product_in.Text, Convert.ToInt32(qty_in.Text));
+                    price_sub_total += (int)productData.Rows[0]["price"] * Convert.ToInt32(qty_in.Text);
+                    sub_total.Text = price_sub_total.ToString();
+
+                    product_in.Text = "";
+                    qty_in.Text = "";
+                    quota.DataSource = quotaTable;
+                }
             }
         }
 
@@ -77,7 +89,7 @@ namespace dispensary_management_system.Panels
             else
             {
                 string today = DateTime.Now.ToString("dd/MM/yyyy");
-                string invoice_id = DateTime.Now.ToString("ddMMyyyy");
+                string invoice_id = DateTime.Now.ToString("ddMMyyyyHHmmss");
                 int dc = discount.Text == "" ? 0 : Convert.ToInt32(discount.Text);
                 string query = $"INSERT INTO PaymentTable VALUES ({dc},'{payment_method.Text}',{cashier_id},'{today}',{price_sub_total},'{invoice_id}')";
                 connection.SetData(query);
@@ -89,12 +101,16 @@ namespace dispensary_management_system.Panels
                 foreach(DataRow row in quotaTable.Rows)
                 {
                     string productName = (string)row["Product Name"];
-                    query = $"SELECT id FROM ProductTable WHERE name='{productName}'";
+                    query = $"SELECT * FROM ProductTable WHERE name='{productName}'";
                     DataTable productIds = connection.GetData(query);
                     int productId = (int)productIds.Rows[0]["id"];
                     int qty = (int)row["Qty"];
 
                     query = $"INSERT INTO QuotaTable VALUES ({last_payment_id},{productId},{qty})";
+                    connection.SetData(query);
+
+                    int currentProductCount = (int)productIds.Rows[0]["count"];
+                    query = $"UPDATE ProductTable SET count={currentProductCount - qty} WHERE id={productId}";
                     connection.SetData(query);
                 }
 
@@ -110,6 +126,14 @@ namespace dispensary_management_system.Panels
             sub_total.Text = "";
             quotaTable.Rows.Clear();
             quota.DataSource = quotaTable;
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+            quotaTable.Rows.Clear();
+            quota.DataSource = quotaTable;
+            price_sub_total = 0;
+            sub_total.Text = price_sub_total.ToString();
         }
     }
 }

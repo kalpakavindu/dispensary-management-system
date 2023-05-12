@@ -103,11 +103,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.quota.DefaultCellStyle = dataGridViewCellStyle2;
-            this.quota.Enabled = false;
             this.quota.Location = new System.Drawing.Point(17, 72);
             this.quota.MultiSelect = false;
             this.quota.Name = "quota";
-            this.quota.ReadOnly = true;
             this.quota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.quota.Size = new System.Drawing.Size(365, 412);
             this.quota.TabIndex = 3;

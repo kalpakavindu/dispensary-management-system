@@ -46,6 +46,7 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.discount = new System.Windows.Forms.TextBox();
+            this.clear_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quota)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,17 +75,17 @@
             // sub_total
             // 
             this.sub_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sub_total.Location = new System.Drawing.Point(536, 335);
+            this.sub_total.Location = new System.Drawing.Point(536, 181);
             this.sub_total.Name = "sub_total";
             this.sub_total.ReadOnly = true;
-            this.sub_total.Size = new System.Drawing.Size(601, 24);
+            this.sub_total.Size = new System.Drawing.Size(274, 24);
             this.sub_total.TabIndex = 21;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(533, 315);
+            this.label4.Location = new System.Drawing.Point(533, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 20;
@@ -115,12 +116,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.quota.DefaultCellStyle = dataGridViewCellStyle2;
             this.quota.Enabled = false;
-            this.quota.Location = new System.Drawing.Point(18, 99);
+            this.quota.Location = new System.Drawing.Point(15, 161);
             this.quota.MultiSelect = false;
             this.quota.Name = "quota";
             this.quota.ReadOnly = true;
             this.quota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.quota.Size = new System.Drawing.Size(418, 375);
+            this.quota.Size = new System.Drawing.Size(460, 356);
             this.quota.TabIndex = 19;
             // 
             // label3
@@ -136,15 +137,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.clear_btn);
             this.panel1.Controls.Add(this.add_product_btn);
             this.panel1.Controls.Add(this.qty_in);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.product_in);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.quota);
             this.panel1.Location = new System.Drawing.Point(15, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 489);
+            this.panel1.Size = new System.Drawing.Size(460, 118);
             this.panel1.TabIndex = 30;
             // 
             // add_product_btn
@@ -155,7 +156,7 @@
             this.add_product_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.add_product_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_product_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_product_btn.Location = new System.Drawing.Point(314, 63);
+            this.add_product_btn.Location = new System.Drawing.Point(314, 73);
             this.add_product_btn.Name = "add_product_btn";
             this.add_product_btn.Size = new System.Drawing.Size(122, 30);
             this.add_product_btn.TabIndex = 26;
@@ -249,6 +250,22 @@
             this.discount.Size = new System.Drawing.Size(219, 24);
             this.discount.TabIndex = 23;
             // 
+            // clear_btn
+            // 
+            this.clear_btn.BackColor = System.Drawing.Color.Salmon;
+            this.clear_btn.FlatAppearance.BorderSize = 0;
+            this.clear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.clear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.Location = new System.Drawing.Point(18, 73);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(122, 30);
+            this.clear_btn.TabIndex = 27;
+            this.clear_btn.Text = "Clear Quote";
+            this.clear_btn.UseVisualStyleBackColor = false;
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
+            // 
             // AddPaymentRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +278,7 @@
             this.Controls.Add(this.sub_total);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.quota);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddPaymentRecord";
             this.Text = "AddPaymentRecord";
@@ -291,5 +309,6 @@
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox discount;
+        private System.Windows.Forms.Button clear_btn;
     }
 }
