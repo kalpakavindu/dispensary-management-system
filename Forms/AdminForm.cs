@@ -27,7 +27,7 @@ namespace dispensary_management_system.Forms
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void dashboard_btn_label_Click(object sender, EventArgs e)

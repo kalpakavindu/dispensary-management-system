@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.view_btn = new System.Windows.Forms.Button();
             this.payments_list = new System.Windows.Forms.DataGridView();
             this.cashier = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,21 +50,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Payments";
             // 
-            // view_btn
-            // 
-            this.view_btn.BackColor = System.Drawing.Color.LightGreen;
-            this.view_btn.FlatAppearance.BorderSize = 0;
-            this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_btn.Location = new System.Drawing.Point(763, 8);
-            this.view_btn.Name = "view_btn";
-            this.view_btn.Size = new System.Drawing.Size(165, 66);
-            this.view_btn.TabIndex = 3;
-            this.view_btn.Text = "View Payment Details";
-            this.view_btn.UseVisualStyleBackColor = false;
-            // 
             // payments_list
             // 
             this.payments_list.AllowUserToAddRows = false;
@@ -82,6 +66,7 @@
             this.payments_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payments_list.Size = new System.Drawing.Size(916, 528);
             this.payments_list.TabIndex = 4;
+            this.payments_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payments_list_CellDoubleClick);
             // 
             // cashier
             // 
@@ -117,11 +102,11 @@
             this.time_range.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time_range.FormattingEnabled = true;
             this.time_range.Items.AddRange(new object[] {
+            "All the Time",
             "Today",
             "Yesterday",
             "This Week",
-            "This Month",
-            "This Year"});
+            "This Month"});
             this.time_range.Location = new System.Drawing.Point(192, 29);
             this.time_range.Name = "time_range";
             this.time_range.Size = new System.Drawing.Size(162, 24);
@@ -141,6 +126,7 @@
             this.filter_btn.TabIndex = 9;
             this.filter_btn.Text = "Filter";
             this.filter_btn.UseVisualStyleBackColor = false;
+            this.filter_btn.Click += new System.EventHandler(this.filter_btn_Click);
             // 
             // panel1
             // 
@@ -150,12 +136,12 @@
             this.panel1.Controls.Add(this.cashier);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.time_range);
-            this.panel1.Location = new System.Drawing.Point(248, 8);
+            this.panel1.Location = new System.Drawing.Point(432, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(496, 66);
             this.panel1.TabIndex = 10;
             // 
-            // Payments
+            // AdminPayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,10 +149,9 @@
             this.ClientSize = new System.Drawing.Size(940, 620);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.payments_list);
-            this.Controls.Add(this.view_btn);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Payments";
+            this.Name = "AdminPayments";
             this.Text = "Payments";
             ((System.ComponentModel.ISupportInitialize)(this.payments_list)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -179,7 +164,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.DataGridView payments_list;
         private System.Windows.Forms.ComboBox cashier;
         private System.Windows.Forms.Label label2;

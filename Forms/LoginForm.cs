@@ -15,9 +15,12 @@ namespace dispensary_management_system.Forms
 {
     public partial class LoginForm : Form
     {
+        private Database connection;
+
         public LoginForm()
         {
             InitializeComponent();
+            connection = new Database();
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace dispensary_management_system.Forms
                 if(password_in.Text == "password")
                 {
                     AdminForm adminForm = new AdminForm();
-                    adminForm.FormClosed += AdminForm_FormClosed;
+                    adminForm.FormClosed += newFormClosed;
                     adminForm.Show();
                     this.Hide();
                 }
@@ -68,12 +71,49 @@ namespace dispensary_management_system.Forms
             }
             else
             {
-                email_in.Text = "";
-                password_in.Text = "";
+                string query = $"SELECT * FROM StaffTable WHERE email='{email_in.Text}'";
+                DataTable memberDetails = connection.GetData(query);
+                if(memberDetails.Rows.Count == 0)
+                {
+                    MessageBox.Show("Email address not found", "Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (memberDetails.Rows[0].IsNull("password"))
+                    {
+                        if(MessageBox.Show("You're not registered yet.", "Error", MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            SignupForm signupForm = new SignupForm();
+                            signupForm.Show();
+                            this.Hide();
+                        }
+                    }
+                    else if ((string)memberDetails.Rows[0]["password"] != password_in.Text)
+                    {
+                        MessageBox.Show("Incorrect Password", "Error", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        if ((string)memberDetails.Rows[0]["role"] == "TREATMENT")
+                        {
+                            PatientForm patientForm = new PatientForm((int)memberDetails.Rows[0]["id"]);
+                            patientForm.FormClosed += newFormClosed;
+                            patientForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            CashierForm cashierForm = new CashierForm((int)memberDetails.Rows[0]["id"]);
+                            cashierForm.FormClosed += newFormClosed;
+                            cashierForm.Show();
+                            this.Hide();
+                        }
+                    }
+                }
             }
         }
 
-        private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void newFormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

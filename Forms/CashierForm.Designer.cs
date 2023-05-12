@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.prof_btn = new System.Windows.Forms.Button();
+            this.logout_btn = new System.Windows.Forms.Button();
             this.add_payment_panel.SuspendLayout();
             this.payments_panel.SuspendLayout();
             this.SuspendLayout();
@@ -125,12 +126,27 @@
             this.prof_btn.UseVisualStyleBackColor = false;
             this.prof_btn.Click += new System.EventHandler(this.prof_btn_Click);
             // 
+            // logout_btn
+            // 
+            this.logout_btn.BackColor = System.Drawing.Color.Salmon;
+            this.logout_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.logout_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout_btn.Location = new System.Drawing.Point(885, 9);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(103, 36);
+            this.logout_btn.TabIndex = 5;
+            this.logout_btn.Text = "Logout";
+            this.logout_btn.UseVisualStyleBackColor = false;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
+            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1173, 620);
+            this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.prof_btn);
             this.Controls.Add(this.name);
             this.Controls.Add(this.label3);
@@ -159,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button prof_btn;
+        private System.Windows.Forms.Button logout_btn;
     }
 }

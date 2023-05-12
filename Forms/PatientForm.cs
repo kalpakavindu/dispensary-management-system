@@ -23,6 +23,14 @@ namespace dispensary_management_system.Forms
             connection = new Database();
             user_id = id;
 
+            AddPatientRecord addPatient = new AddPatientRecord(user_id)
+            {
+                TopLevel = false
+            };
+            main_panel.Controls.Clear();
+            main_panel.Controls.Add(addPatient);
+            addPatient.Show();
+
             try
             {
                 string query = $"SELECT * FROM StaffTable WHERE id={id}";
@@ -42,7 +50,7 @@ namespace dispensary_management_system.Forms
 
         private void add_treatment_panel_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Honeydew;
+            add_treatment_panel.BackColor = Color.Honeydew;
             treatments_panel.BackColor = Color.LightGreen;
 
             AddPatientRecord addPatient = new AddPatientRecord(user_id)
@@ -56,7 +64,7 @@ namespace dispensary_management_system.Forms
 
         private void add_treatment_label_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Honeydew;
+            add_treatment_panel.BackColor = Color.Honeydew;
             treatments_panel.BackColor = Color.LightGreen;
 
             AddPatientRecord addPatient = new AddPatientRecord(user_id)
@@ -70,7 +78,7 @@ namespace dispensary_management_system.Forms
 
         private void treatments_panel_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Honeydew;
+            treatments_panel.BackColor = Color.Honeydew;
             add_treatment_panel.BackColor = Color.LightGreen;
 
             ViewPatientRecords records = new ViewPatientRecords(user_id)
@@ -84,7 +92,7 @@ namespace dispensary_management_system.Forms
 
         private void treatment_details_label_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Honeydew;
+            treatments_panel.BackColor = Color.Honeydew;
             add_treatment_panel.BackColor = Color.LightGreen;
 
 
@@ -101,6 +109,13 @@ namespace dispensary_management_system.Forms
         {
             StaffMember staffMember = new StaffMember(user_id, false, false);
             staffMember.ShowDialog();
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

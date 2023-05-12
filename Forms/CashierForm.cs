@@ -22,6 +22,7 @@ namespace dispensary_management_system.Forms
             InitializeComponent();
             connection = new Database();
             user_id = id;
+            switchToAddPaymentPanel();
 
             try
             {
@@ -63,7 +64,7 @@ namespace dispensary_management_system.Forms
         private void switchToAddPaymentPanel()
         {
             payments_panel.BackColor = Color.LightGreen;
-            this.BackColor = Color.Honeydew;
+            add_payment_panel.BackColor = Color.Honeydew;
 
             AddPaymentRecord addPaymentRecord = new AddPaymentRecord(user_id)
             {
@@ -77,7 +78,7 @@ namespace dispensary_management_system.Forms
         private void switchToViewPaymentsPanel()
         {
             add_payment_panel.BackColor = Color.LightGreen;
-            this.BackColor = Color.Honeydew;
+            payments_panel.BackColor = Color.Honeydew;
 
             ViewPaymentDetails viewPaymentDetails = new ViewPaymentDetails(user_id)
             {
@@ -92,6 +93,13 @@ namespace dispensary_management_system.Forms
         {
             StaffMember staffMember = new StaffMember(user_id, false, false);
             staffMember.ShowDialog();
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

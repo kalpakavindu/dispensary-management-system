@@ -32,9 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.patient_name_in = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.gender_in = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dob_in = new System.Windows.Forms.DateTimePicker();
             this.contact_in = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.sick_in = new System.Windows.Forms.TextBox();
@@ -45,8 +43,10 @@
             this.discount = new System.Windows.Forms.Label();
             this.del_btn = new System.Windows.Forms.Button();
             this.treatment_date = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cashier_in = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.gender_in = new System.Windows.Forms.TextBox();
+            this.birthday_in = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +74,7 @@
             this.patient_name_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patient_name_in.Location = new System.Drawing.Point(18, 85);
             this.patient_name_in.Name = "patient_name_in";
+            this.patient_name_in.ReadOnly = true;
             this.patient_name_in.Size = new System.Drawing.Size(302, 24);
             this.patient_name_in.TabIndex = 2;
             // 
@@ -87,18 +88,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Gender";
             // 
-            // gender_in
-            // 
-            this.gender_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender_in.FormattingEnabled = true;
-            this.gender_in.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.gender_in.Location = new System.Drawing.Point(18, 137);
-            this.gender_in.Name = "gender_in";
-            this.gender_in.Size = new System.Drawing.Size(302, 26);
-            this.gender_in.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -109,19 +98,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Patient Birthday";
             // 
-            // dob_in
-            // 
-            this.dob_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dob_in.Location = new System.Drawing.Point(18, 193);
-            this.dob_in.Name = "dob_in";
-            this.dob_in.Size = new System.Drawing.Size(302, 24);
-            this.dob_in.TabIndex = 6;
-            // 
             // contact_in
             // 
             this.contact_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact_in.Location = new System.Drawing.Point(18, 247);
             this.contact_in.Name = "contact_in";
+            this.contact_in.ReadOnly = true;
             this.contact_in.Size = new System.Drawing.Size(302, 24);
             this.contact_in.TabIndex = 8;
             // 
@@ -140,6 +122,7 @@
             this.sick_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sick_in.Location = new System.Drawing.Point(383, 85);
             this.sick_in.Name = "sick_in";
+            this.sick_in.ReadOnly = true;
             this.sick_in.Size = new System.Drawing.Size(302, 24);
             this.sick_in.TabIndex = 10;
             // 
@@ -205,6 +188,7 @@
             this.del_btn.TabIndex = 19;
             this.del_btn.Text = "Delete Patient";
             this.del_btn.UseVisualStyleBackColor = false;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // treatment_date
             // 
@@ -216,14 +200,14 @@
             this.treatment_date.TabIndex = 21;
             this.treatment_date.Text = "19/05/2023";
             // 
-            // textBox1
+            // cashier_in
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(18, 314);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(302, 24);
-            this.textBox1.TabIndex = 23;
+            this.cashier_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashier_in.Location = new System.Drawing.Point(18, 314);
+            this.cashier_in.Name = "cashier_in";
+            this.cashier_in.ReadOnly = true;
+            this.cashier_in.Size = new System.Drawing.Size(302, 24);
+            this.cashier_in.TabIndex = 23;
             // 
             // label8
             // 
@@ -235,13 +219,33 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Cashier Name";
             // 
+            // gender_in
+            // 
+            this.gender_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender_in.Location = new System.Drawing.Point(18, 137);
+            this.gender_in.Name = "gender_in";
+            this.gender_in.ReadOnly = true;
+            this.gender_in.Size = new System.Drawing.Size(302, 24);
+            this.gender_in.TabIndex = 24;
+            // 
+            // birthday_in
+            // 
+            this.birthday_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthday_in.Location = new System.Drawing.Point(18, 192);
+            this.birthday_in.Name = "birthday_in";
+            this.birthday_in.ReadOnly = true;
+            this.birthday_in.Size = new System.Drawing.Size(302, 24);
+            this.birthday_in.TabIndex = 25;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(705, 358);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.birthday_in);
+            this.Controls.Add(this.gender_in);
+            this.Controls.Add(this.cashier_in);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.treatment_date);
             this.Controls.Add(this.del_btn);
@@ -253,9 +257,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.contact_in);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dob_in);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.gender_in);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.patient_name_in);
             this.Controls.Add(this.label2);
@@ -274,9 +276,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox patient_name_in;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox gender_in;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dob_in;
         private System.Windows.Forms.TextBox contact_in;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox sick_in;
@@ -287,7 +287,9 @@
         private System.Windows.Forms.Label discount;
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Label treatment_date;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cashier_in;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox gender_in;
+        private System.Windows.Forms.TextBox birthday_in;
     }
 }

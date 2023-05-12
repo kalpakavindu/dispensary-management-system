@@ -92,23 +92,25 @@ namespace dispensary_management_system.Panels
                 DataTable mainPaymentDetails = connection.GetData(query);
                 DataTable paymentDetails = mainPaymentDetails.Copy();
 
-                if(range == "This Week")
+                if (range == "This Week")
                 {
+                    paymentDetails.Rows.Clear();
                     for (int i = 0; i < 7; i++)
                     {
                         string date = DateTime.Now.AddDays(i * -1).ToString("dd/MM/yyyy");
-                        foreach(DataRow row in mainPaymentDetails.Rows)
+                        foreach (DataRow row in mainPaymentDetails.Rows)
                         {
                             if ((string)row["payment_date"] == date)
                             {
-                                DataRow tr = paymentDetails.Rows[mainPaymentDetails.Rows.IndexOf(row)];
-                                paymentDetails.Rows.Remove(tr);
+                                paymentDetails.ImportRow(row);
                             }
                         }
                     }
                     return paymentDetails.Rows.Count;
-                }else if(range == "This Month")
+                }
+                else if (range == "This Month")
                 {
+                    paymentDetails.Rows.Clear();
                     for (int i = 0; i < 30; i++)
                     {
                         string date = DateTime.Now.AddDays(i * -1).ToString("dd/MM/yyyy");
@@ -116,23 +118,7 @@ namespace dispensary_management_system.Panels
                         {
                             if ((string)row["payment_date"] == date)
                             {
-                                DataRow tr = paymentDetails.Rows[mainPaymentDetails.Rows.IndexOf(row)];
-                                paymentDetails.Rows.Remove(tr);
-                            }
-                        }
-                    }
-                    return paymentDetails.Rows.Count;
-                }else if(range == "This Year")
-                {
-                    for (int i = 0; i < 365; i++)
-                    {
-                        string date = DateTime.Now.AddDays(i * -1).ToString("dd/MM/yyyy");
-                        foreach (DataRow row in mainPaymentDetails.Rows)
-                        {
-                            if ((string)row["payment_date"] == date)
-                            {
-                                DataRow tr = paymentDetails.Rows[mainPaymentDetails.Rows.IndexOf(row)];
-                                paymentDetails.Rows.Remove(tr);
+                                paymentDetails.ImportRow(row);
                             }
                         }
                     }

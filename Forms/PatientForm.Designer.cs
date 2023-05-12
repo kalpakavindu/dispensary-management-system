@@ -36,6 +36,7 @@
             this.main_panel = new System.Windows.Forms.Panel();
             this.add_treatment_panel = new System.Windows.Forms.Panel();
             this.add_treatment_label = new System.Windows.Forms.Label();
+            this.logout_btn = new System.Windows.Forms.Button();
             this.treatments_panel.SuspendLayout();
             this.add_treatment_panel.SuspendLayout();
             this.SuspendLayout();
@@ -125,12 +126,27 @@
             this.add_treatment_label.Text = "Add Patient";
             this.add_treatment_label.Click += new System.EventHandler(this.add_treatment_label_Click);
             // 
+            // logout_btn
+            // 
+            this.logout_btn.BackColor = System.Drawing.Color.Salmon;
+            this.logout_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.logout_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout_btn.Location = new System.Drawing.Point(906, 11);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(103, 36);
+            this.logout_btn.TabIndex = 11;
+            this.logout_btn.Text = "Logout";
+            this.logout_btn.UseVisualStyleBackColor = false;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1173, 620);
+            this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.prof_btn);
             this.Controls.Add(this.name);
             this.Controls.Add(this.label3);
@@ -158,5 +174,6 @@
         private System.Windows.Forms.Panel main_panel;
         private System.Windows.Forms.Panel add_treatment_panel;
         private System.Windows.Forms.Label add_treatment_label;
+        private System.Windows.Forms.Button logout_btn;
     }
 }

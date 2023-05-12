@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dispensary_management_system.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,12 @@ namespace dispensary_management_system.Panels
             DataTable patientRecords = connection.GetData(query);
 
             patient_records.DataSource = patientRecords;
+        }
+
+        private void patient_records_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Patient patientDetailsModal = new Patient(Convert.ToInt32(patient_records.Rows[e.RowIndex].Cells[0].Value), false);
+            patientDetailsModal.ShowDialog();
         }
     }
 }

@@ -44,6 +44,8 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.del_btn = new System.Windows.Forms.Button();
             this.upd_btn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.role_in = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -216,12 +218,36 @@
             this.upd_btn.UseVisualStyleBackColor = false;
             this.upd_btn.Click += new System.EventHandler(this.upd_btn_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(456, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Section";
+            // 
+            // role_in
+            // 
+            this.role_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.role_in.FormattingEnabled = true;
+            this.role_in.Items.AddRange(new object[] {
+            "TREATMENT",
+            "PRODUCT"});
+            this.role_in.Location = new System.Drawing.Point(514, 24);
+            this.role_in.Name = "role_in";
+            this.role_in.Size = new System.Drawing.Size(121, 26);
+            this.role_in.TabIndex = 17;
+            // 
             // StaffMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(658, 364);
+            this.Controls.Add(this.role_in);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.upd_btn);
             this.Controls.Add(this.del_btn);
             this.Controls.Add(this.add_btn);
@@ -264,5 +290,7 @@
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Button upd_btn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox role_in;
     }
 }

@@ -59,6 +59,7 @@
             this.add_btn.TabIndex = 53;
             this.add_btn.Text = "Add Record";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // discount_in
             // 

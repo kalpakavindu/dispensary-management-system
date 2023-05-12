@@ -12,9 +12,12 @@ namespace dispensary_management_system.Forms
 {
     public partial class SignupForm : Form
     {
+        private Database connection;
+
         public SignupForm()
         {
             InitializeComponent();
+            connection = new Database();
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -55,6 +58,39 @@ namespace dispensary_management_system.Forms
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
+        }
+
+        private void signin_btn_Click(object sender, EventArgs e)
+        {
+            if(email_in.Text == "" || password_in.Text == "" || cpassword_in.Text == "")
+            {
+                MessageBox.Show("Please fillout all the feilds", "error", MessageBoxButtons.OK);
+            }
+            else
+            {
+                if(password_in.Text != cpassword_in.Text)
+                {
+                    MessageBox.Show("Passwords are not the same", "Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    try
+                    {
+                        string query = $"UPDATE StaffTable SET password='{password_in.Text}' WHERE email='{email_in.Text}'";
+                        connection.SetData(query);
+                        LoginForm loginForm = new LoginForm();
+                        loginForm.Show();
+                        this.Close();
+                    }
+                    catch(Exception ex)
+                    {
+                        if(MessageBox.Show(ex.Message,"Unexpected error", MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            Application.Exit();
+                        }
+                    }
+                }
+            }
         }
     }
 }

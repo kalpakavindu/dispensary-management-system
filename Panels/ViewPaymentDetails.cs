@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dispensary_management_system.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,12 @@ namespace dispensary_management_system.Panels
                     Application.Exit();
                 }
             }
+        }
+
+        private void payments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Payment paymentDetailsModal = new Payment(Convert.ToInt32(payments.Rows[e.RowIndex].Cells[0].Value),false);
+            paymentDetailsModal.ShowDialog();
         }
     }
 }

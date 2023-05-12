@@ -63,6 +63,7 @@ namespace dispensary_management_system.Dialogs
                 last_name_in.Text = (string)memberDetails.Rows[0]["last_name"];
                 gender_in.SelectedItem = (string)memberDetails.Rows[0]["gender"];
                 dob_in.Value = DateTime.ParseExact((string)memberDetails.Rows[0]["dob"],"dd/MM/yyyy",CultureInfo.InvariantCulture);
+                role_in.SelectedItem = (string)memberDetails.Rows[0]["role"];
                 email_in.Text = (string)memberDetails.Rows[0]["email"];
                 contact_in.Text = (string)memberDetails.Rows[0]["contact"];
             }
@@ -77,7 +78,7 @@ namespace dispensary_management_system.Dialogs
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if(first_name_in.Text == "" || last_name_in.Text == ""|| gender_in.Text == "" || email_in.Text == ""||dob_in.Text == "" || contact_in.Text == "")
+            if(first_name_in.Text == "" || last_name_in.Text == ""|| gender_in.Text == "" || email_in.Text == ""||dob_in.Text == "" || contact_in.Text == "" || role_in.Text == "")
             {
                 MessageBox.Show("Please fillout all the fields to continue.", "Error", MessageBoxButtons.OK);
             }
@@ -89,7 +90,7 @@ namespace dispensary_management_system.Dialogs
                     dob_in.CustomFormat = "dd/MM/yyyy";
                     string birthday = dob_in.Value.Date.ToString("dd/MM/yyyy");
 
-                    string query = $"INSERT INTO StaffTable VALUES('{first_name_in.Text}','{last_name_in.Text}','{email_in.Text}','{gender_in.Text}','{birthday}','{contact_in.Text}',null)";
+                    string query = $"INSERT INTO StaffTable VALUES('{first_name_in.Text}','{last_name_in.Text}','{email_in.Text}','{gender_in.Text}','{birthday}','{contact_in.Text}',null,'{role_in.Text}')";
                     connection.SetData(query);
                     if (MessageBox.Show("Congradulations!\n\nNew Staff Member has been added successfully.", "Success", MessageBoxButtons.OK) == DialogResult.OK)
                     {
@@ -107,7 +108,7 @@ namespace dispensary_management_system.Dialogs
 
         private void upd_btn_Click(object sender, EventArgs e)
         {
-            if (first_name_in.Text == "" || last_name_in.Text == "" || gender_in.Text == "" || email_in.Text == "" || dob_in.Text == "" || contact_in.Text == "")
+            if (first_name_in.Text == "" || last_name_in.Text == "" || gender_in.Text == "" || email_in.Text == "" || dob_in.Text == "" || contact_in.Text == "" || role_in.Text == "")
             {
                 MessageBox.Show("Please fillout all the fields to continue.", "Error", MessageBoxButtons.OK);
             }
@@ -119,7 +120,7 @@ namespace dispensary_management_system.Dialogs
                     dob_in.CustomFormat = "dd/MM/yyyy";
                     string birthday = dob_in.Value.Date.ToString("dd/MM/yyyy");
 
-                    string query = $"UPDATE StaffTable SET first_name='{first_name_in.Text}',last_name='{last_name_in.Text}',gender='{gender_in.Text}',dob='{birthday}',email='{email_in.Text}',contact='{contact_in.Text}' WHERE id={editKey}";
+                    string query = $"UPDATE StaffTable SET first_name='{first_name_in.Text}',last_name='{last_name_in.Text}',gender='{gender_in.Text}',dob='{birthday}',email='{email_in.Text}',contact='{contact_in.Text}',role='{role_in.Text}' WHERE id={editKey}";
                     connection.SetData(query);
                     if(MessageBox.Show("Staff member detauls updated successfully.","Success",MessageBoxButtons.OK) == DialogResult.OK)
                     {

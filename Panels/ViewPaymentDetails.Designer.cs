@@ -46,6 +46,7 @@
             this.payments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payments.Size = new System.Drawing.Size(1125, 505);
             this.payments.TabIndex = 0;
+            this.payments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payments_CellDoubleClick);
             // 
             // ViewPaymentDetails
             // 

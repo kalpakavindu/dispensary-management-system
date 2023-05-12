@@ -32,7 +32,6 @@
             this.payment_date = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.quota = new System.Windows.Forms.DataGridView();
-            this.product_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.sub_total = new System.Windows.Forms.TextBox();
             this.discount = new System.Windows.Forms.TextBox();
@@ -43,10 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.net_total = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cashier_btn = new System.Windows.Forms.Button();
+            this.del_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quota)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,23 +91,9 @@
             this.quota.Name = "quota";
             this.quota.ReadOnly = true;
             this.quota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.quota.Size = new System.Drawing.Size(365, 365);
+            this.quota.Size = new System.Drawing.Size(365, 412);
             this.quota.TabIndex = 3;
-            // 
-            // product_btn
-            // 
-            this.product_btn.BackColor = System.Drawing.Color.LightGreen;
-            this.product_btn.FlatAppearance.BorderSize = 0;
-            this.product_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.product_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.product_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.product_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_btn.Location = new System.Drawing.Point(17, 453);
-            this.product_btn.Name = "product_btn";
-            this.product_btn.Size = new System.Drawing.Size(150, 31);
-            this.product_btn.TabIndex = 4;
-            this.product_btn.Text = "View Product Details";
-            this.product_btn.UseVisualStyleBackColor = false;
+            this.quota.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.quota_CellDoubleClick);
             // 
             // label4
             // 
@@ -127,6 +110,7 @@
             this.sub_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sub_total.Location = new System.Drawing.Point(413, 72);
             this.sub_total.Name = "sub_total";
+            this.sub_total.ReadOnly = true;
             this.sub_total.Size = new System.Drawing.Size(369, 24);
             this.sub_total.TabIndex = 6;
             // 
@@ -135,6 +119,7 @@
             this.discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discount.Location = new System.Drawing.Point(413, 128);
             this.discount.Name = "discount";
+            this.discount.ReadOnly = true;
             this.discount.Size = new System.Drawing.Size(369, 24);
             this.discount.TabIndex = 8;
             // 
@@ -153,6 +138,7 @@
             this.payment_method.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payment_method.Location = new System.Drawing.Point(413, 337);
             this.payment_method.Name = "payment_method";
+            this.payment_method.ReadOnly = true;
             this.payment_method.Size = new System.Drawing.Size(369, 24);
             this.payment_method.TabIndex = 10;
             // 
@@ -171,6 +157,7 @@
             this.cashier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashier.Location = new System.Drawing.Point(413, 395);
             this.cashier.Name = "cashier";
+            this.cashier.ReadOnly = true;
             this.cashier.Size = new System.Drawing.Size(225, 24);
             this.cashier.TabIndex = 12;
             // 
@@ -189,6 +176,7 @@
             this.net_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.net_total.Location = new System.Drawing.Point(413, 184);
             this.net_total.Name = "net_total";
+            this.net_total.ReadOnly = true;
             this.net_total.Size = new System.Drawing.Size(369, 24);
             this.net_total.TabIndex = 14;
             // 
@@ -202,53 +190,37 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Total Price";
             // 
-            // button1
+            // cashier_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(656, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 44);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "View Cashier Details";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cashier_btn.BackColor = System.Drawing.Color.LightGreen;
+            this.cashier_btn.FlatAppearance.BorderSize = 0;
+            this.cashier_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cashier_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cashier_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cashier_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashier_btn.Location = new System.Drawing.Point(656, 375);
+            this.cashier_btn.Name = "cashier_btn";
+            this.cashier_btn.Size = new System.Drawing.Size(126, 44);
+            this.cashier_btn.TabIndex = 15;
+            this.cashier_btn.Text = "View Cashier Details";
+            this.cashier_btn.UseVisualStyleBackColor = false;
+            this.cashier_btn.Click += new System.EventHandler(this.cashier_btn_Click);
             // 
-            // button2
+            // del_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.Salmon;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(413, 453);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(369, 31);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Delete Payment";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(413, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(369, 24);
-            this.textBox1.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(410, 225);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Currency";
+            this.del_btn.BackColor = System.Drawing.Color.Salmon;
+            this.del_btn.FlatAppearance.BorderSize = 0;
+            this.del_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.del_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.del_btn.Location = new System.Drawing.Point(413, 453);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(369, 31);
+            this.del_btn.TabIndex = 18;
+            this.del_btn.Text = "Delete Payment";
+            this.del_btn.UseVisualStyleBackColor = false;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // Payment
             // 
@@ -256,10 +228,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(800, 505);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.del_btn);
+            this.Controls.Add(this.cashier_btn);
             this.Controls.Add(this.net_total);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cashier);
@@ -270,7 +240,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.sub_total);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.product_btn);
             this.Controls.Add(this.quota);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.payment_date);
@@ -290,7 +259,6 @@
         private System.Windows.Forms.Label payment_date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView quota;
-        private System.Windows.Forms.Button product_btn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox sub_total;
         private System.Windows.Forms.TextBox discount;
@@ -301,9 +269,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox net_total;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cashier_btn;
+        private System.Windows.Forms.Button del_btn;
     }
 }

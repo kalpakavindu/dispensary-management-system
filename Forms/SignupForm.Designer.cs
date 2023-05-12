@@ -122,6 +122,7 @@
             this.signin_btn.TabIndex = 16;
             this.signin_btn.Text = "Sign Up";
             this.signin_btn.UseVisualStyleBackColor = false;
+            this.signin_btn.Click += new System.EventHandler(this.signin_btn_Click);
             // 
             // password_in
             // 

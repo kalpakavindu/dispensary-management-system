@@ -47,8 +47,9 @@
             this.patient_records.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patient_records.Size = new System.Drawing.Size(1124, 495);
             this.patient_records.TabIndex = 0;
+            this.patient_records.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patient_records_CellDoubleClick);
             // 
-            // PatientRecords
+            // ViewPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -56,7 +57,7 @@
             this.ClientSize = new System.Drawing.Size(1149, 520);
             this.Controls.Add(this.patient_records);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PatientRecords";
+            this.Name = "ViewPatientRecords";
             this.Text = "PatientRecords";
             ((System.ComponentModel.ISupportInitialize)(this.patient_records)).EndInit();
             this.ResumeLayout(false);
